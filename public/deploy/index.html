@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend To RPC - Contract</title>
+
+    <!-- ethers.js - Needed for verifying signature, and various hashing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Frontend To RPC - Deploy Contract</h1>
+
+    <p>How to deploy a contract only with the bytecode.</p>
+
+    <button id="button-wallet-connect">Connect Wallet</button>
+
+    <pre><code id="code-wallet-connect"></code></pre>
+
+    <section id="section-connected" style="display: none">
+        <hr />
+
+        <h2>Deploy</h2>
+
+        <form id="form-contract-deploy">
+            <div>
+                <label>Contract Bytecode</label>
+                <textarea readonly name="bytecode"></textarea>
+            </div>
+            <div>
+                <button type="submit">
+                    Deploy
+                </button>
+            </div>
+        </form>
+
+        <pre><code id="code-contract-deploy"></code></pre>
+    </section>
+</body>
+</html>

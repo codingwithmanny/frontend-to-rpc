@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend To RPC - Contract</title>
+
+    <!-- ethers.js - Needed for verifying signature, and various hashing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Frontend To RPC - Contract</h1>
+
+    <p>How to read from a contract, how to write to a contract, and how to read logs from a contract.</p>
+
+    <button id="button-wallet-connect">Connect Wallet</button>
+
+    <pre><code id="code-wallet-connect"></code></pre>
+
+    <section id="section-connected" style="display: none">
+        <hr />
+
+        <div>
+            <lable>Contract Address</lable>
+            <input type="text" readonly id="input-contract-address" />
+        </div>
+
+        <hr />
+
+        <h2>Contract Read</h2>
+
+        <button id="button-contract-read">getGreeting</button>
+
+        <pre><code id="code-contract-read"></code></pre>
+
+        <hr />
+
+        <h2>Contract Write</h2>
+
+        <form id="form-contract-write">
+            <div>
+                <label>New Greeting</label>
+                <input type="text" name="greeting" placeholder="Ex: Your greeting..." />
+            </div>
+            <div>
+                <button type="submit">
+                    setGreeting
+                </button>
+            </div>
+        </form>
+
+        <pre><code id="code-contract-write"></code></pre>
+
+        <hr />
+
+        <h2>Contract Logs</h2>
+
+        <form id="form-contract-logs">
+            <div>
+                <label>From Block</label>
+                <input type="text" name="fromBlock" placeholder="Ex: 29481150 | latest" />
+            </div>
+            <div>
+                <label>To Block</label>
+                <input type="text" name="toBlock" placeholder="Ex: 29481150 | latest" />
+            </div>
+            <div>
+                <label>Topic *must use double quotes for array and max 4</label>
+                <input type="text" name="topics" placeholder="Ex: ['Transfer(address,address,uint256)', 'Event(address,address,uint256)']" value='["NewGreeting(address,string)"]' />
+            </div>
+            <div>
+                <button type="submit">
+                    Get Logs
+                </button>
+            </div>
+        </form>
+
+        <pre><code id="code-contract-logs"></code></pre>
+
+    </section>
+</body>
+</html>
