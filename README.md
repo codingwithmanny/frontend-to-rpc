@@ -8,6 +8,9 @@ These are example of being able to connect to a wallet, read/write from a contra
 
 - Node `v18.12.1` or NVM
 - pnpm `7.21.0` or greater
+- MetaMask Chrome extension
+- Mumbai Network
+- Mumbai Testnet Tokens
 
 ---
 
